@@ -9,3 +9,16 @@
 > Deterministic timing – responds to I/O events with precise timing, unlike a Linux user-space app
 > Has direct access to GPIO – can read/write pins at high speeds
 > Can run real-time routines without being interrupted by the main Linux OS
+
+### Q3. What software should be used on linux PCs to monitor serial communication and why to do so?
+> SW tool: minicom .. Remark: Adjust its settings  to read the proper device file of the (USB-TTL)
+> Reason: get direct access of the Linux consol (UART0), instead of using a display.
+> This lets you: login to the terminal, debug boot issues, view kernel logs(u-boot or Linux), Fix misconfigured network settings
+
+| Reason to Use USB-TTL Adapter        | Why It's Useful                                 |
+| ------------------------------------ | ----------------------------------------------- |
+| Serial console access                | Debug boot, configure system without display    |
+| Early-stage debugging (U-Boot, logs) | See output before OS boots                      |
+| No Ethernet or USB access            | Alternative way to control the board            |
+| Works on headless systems            | Perfect for embedded/IoT devices                |
+| Stable and always available          | Unlike SSH, serial works even when OS is broken |
