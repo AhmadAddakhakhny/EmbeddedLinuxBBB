@@ -22,3 +22,11 @@
 | No Ethernet or USB access            | Alternative way to control the board            |
 | Works on headless systems            | Perfect for embedded/IoT devices                |
 | Stable and always available          | Unlike SSH, serial works even when OS is broken |
+
+### Q4. What is SoC?
+> It's a system on chip composed of lots of peripherals and their controllers (if required) and memory
+> AM3358: it's a SoC provided by TI
+> TRM: Technical reference manual -> shows all the details of the functional blocks of the SoC
+
+### Q5. What is the heart of an SoC AM3358?
+> MPU: micro processing unit and it's ARM Cortex-A8 up to 1GBH 32 RISC
