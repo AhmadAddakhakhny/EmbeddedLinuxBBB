@@ -1,0 +1,2 @@
+### Q1. What do we need to successfully boot linux on BBB?
+> 
