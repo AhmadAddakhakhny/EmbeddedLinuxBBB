@@ -50,3 +50,8 @@
 > you can change the boot behaviour of the u-boot by using this file.  
 > This file is being used to set som enviroment variables which drives the uboot according to your need.
 
+### Q10. Breifly list the stages of the control flow during the linux boot?
+> 1. Uboot: after loading the kernel and DTB moves the control to Boot strap loader.  
+> 2. Linux's Boot Strap Loader: Uncompresses the linux kernel and its source code is arch. dependant.  
+> 3. Linux Kernel: Create the init-thread with id 1 and other kernel-threads.  
+> 4. User application: it's being run by the init-thread with id 1.  
