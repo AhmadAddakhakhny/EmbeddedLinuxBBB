@@ -38,5 +38,15 @@
 > Mostlikely it's not a common practice amond the board providers.
 > as the typical boards such **BBB** it's not possible, as ROM code won’t be having any idea about what kind of DDR RAM being used in the product to initialize it.
 
-### Q. What is the purpose of U-Boot?
-> Used to load the linux kernel
+### Q8. What is the job/purpose of U-Boot?
+> Used to load the linux kernel  
+> Initialize some of the preipherals like I2C, NAND, FLASH, ETHERNET, UART, USB, MMC, etc. becasue it supports loading kernel from all these peripherals.  
+> Load linux kernel image from various boot sources to the DDR memory of the board.  
+> passing of boot arguments to the kernel  
+> uboot looks for uimage, and **uimage** is composed of **64 Bytes uboot image header + zImage(ELF)**  
+
+### Q9. What is the job of uEnv.txt?
+> it's being used by the u-boot.  
+> you can change the boot behaviour of the u-boot by using this file.  
+> This file is being used to set som enviroment variables which drives the uboot according to your need.
+
