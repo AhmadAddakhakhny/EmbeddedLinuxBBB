@@ -55,3 +55,7 @@
 > 2. Linux's Boot Strap Loader: Uncompresses the linux kernel and its source code is arch. dependant.  
 > 3. Linux Kernel: Create the init-thread with id 1 and other kernel-threads.  
 > 4. User application: it's being run by the init-thread with id 1.  
+
+### Hints:
+> To check the image version: $ lsb_release -a  
+> To check kernel version: $ uname -r
