@@ -16,4 +16,24 @@ sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
 
 # Step 4: Compile
 sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4
+
+********************************* Cross compile linux kernel *********************************
+# Step 1: clean the source directory
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean
+
+# Step 2: Generate a config file for BBB based upon the default configurations
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- omap2plus_defconfig
+
+# Step 3: [Optional] run menuconfig, if you want to do any settings other than the defaul ones.
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
+
+# Step 4: Compile kernel with static modules
+# Generated images: /arm/boot/
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- uImage dtbs -j4
+
+# Step 5: Compile dynamic/loadable modules
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4 modules
+
+# Step 6: Install the RFS
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-  INSTALL_MOD_PATH=<path-of-the-RFS> modules_install
 ```
