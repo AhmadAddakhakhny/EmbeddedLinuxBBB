@@ -29,7 +29,7 @@ sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
 
 # Step 4: Compile kernel with static modules
 # Generated images: /arm/boot/
-sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- uImage dtbs -j4
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- uImage dtbs LOADADDR=0x80008000 -j4
 
 # Step 5: Compile dynamic/loadable modules
 sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4 modules
