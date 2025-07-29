@@ -39,3 +39,18 @@
 
 <img width="899" height="408" alt="image" src="https://github.com/user-attachments/assets/17eddd09-6110-4b56-b1ec-ce25dbf815ee" />
 
+### How to check the current GPIO pins configurations?
+> cat sys/kernel/debug/pinctrl/44e10800.pinmux-pinctrl-single/pins  
+> Remark: make a map between the PIN numbering as presented from kernel-debug and from the SRM expansion header  
+
+
+### How to control the GPIO pins?
+> go to /sys/class/gpio
+
+### How to create a device file for an un-existed gpio pin?
+> echo <pin-number> > export
+
+### How to play with any of the USR-LEDs?
+> got to /sys/class/leds/usrX  
+> cat trigger ==> That would show all the arguments that the device file can operate at
+> echo "none" > trigger   ==> That would turn off the LEDx
