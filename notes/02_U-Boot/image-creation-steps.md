@@ -36,4 +36,17 @@ sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4 modules
 
 # Step 6: Install the RFS
 sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-  INSTALL_MOD_PATH=<path-of-the-RFS> modules_install
+
+********************************* Cross compile busybox *********************************
+# Step 1: clean the source directory
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean
+
+# Step 2: Generate a config file for BBB based upon the default configurations
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- defconfig
+
+# Step 3: [Optional] run menuconfig, if you want to do any settings other than the defaul ones.
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
+
+# Step 4: Generate the busybox binary, and minimal file system
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- CONFIG_PREFIX=<install_path> install
 ```
